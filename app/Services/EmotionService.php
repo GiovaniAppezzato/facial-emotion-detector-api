@@ -8,6 +8,16 @@ use App\Models\Summary;
 
 class EmotionService
 {
+    public function summary(int $workspaceId)
+    {
+        return Summary::whereWorkspaceId($workspaceId)->first();
+    }
+
+    public function details(int $workspaceId)
+    {
+        return HistoryOfEmotion::whereWorkspaceId($workspaceId)->get();
+    }
+
     public function increment(string $emotion, int $workspaceId): void
     {
         DB::transaction(function () use ($emotion, $workspaceId) {
