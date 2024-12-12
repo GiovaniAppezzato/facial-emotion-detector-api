@@ -81,6 +81,9 @@ const formatDateTime = (datetime) => {
                     class="overflow-hidden bg-white shadow-sm sm:rounded-lg mb-6"
                 >
                     <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-8">
+                            Resumo geral das emoções ({{ summary.total }} registros)
+                        </h3>
                         <div class="chart-container">
                             <Pie :data="chartData" :options="chartOptions" />
                         </div>  
@@ -90,6 +93,11 @@ const formatDateTime = (datetime) => {
                 <div
                     class="overflow-hidden bg-white shadow-sm sm:rounded-lg"
                 >
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800">
+                            Ultimas emoções registradas
+                        </h3>
+                    </div>  
                     <div class="relative overflow-x-auto">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50">

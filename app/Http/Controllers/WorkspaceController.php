@@ -11,7 +11,7 @@ class WorkspaceController extends Controller
     public function index(Workspace $workspace): Response
     {
         $summary = $workspace->summary;
-        $historyOfEmotions = $workspace->historyOfEmotions()->orderBy('created_at', 'desc')->take(10)->get();
+        $historyOfEmotions = $workspace->historyOfEmotions()->orderBy('created_at', 'desc')->take(15)->get();
         
         return Inertia::render('Workspace/Index', [
             'workspace' => $workspace,
