@@ -16,7 +16,7 @@ class Workspace extends Model
         return $this->hasOne(Summary::class);
     }
 
-    public function history()
+    public function historyOfEmotions()
     {
         return $this->hasMany(HistoryOfEmotion::class);
     }

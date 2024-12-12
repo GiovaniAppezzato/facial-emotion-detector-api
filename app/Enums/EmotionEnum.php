@@ -16,4 +16,18 @@ enum EmotionEnum: string
     {
         return array_column(self::cases(), 'value');
     }
+
+    public static function translate(string $emotion): string
+    {
+        return match ($emotion) {
+            self::ANGRY->value => 'Raiva',
+            self::DISGUST->value => 'Nojo',
+            self::FEAR->value => 'Medo',
+            self::HAPPY->value => 'Felicidade',
+            self::SAD->value => 'Tristeza',
+            self::SURPRISE->value => 'Surpresa',
+            self::NEUTRAL->value => 'Neutro',
+            default => 'Desconhecido',
+        };
+    }
 }
